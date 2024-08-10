@@ -17,7 +17,7 @@ const Register = () => {
     //FUNCTION DEFINE HERE 
     let CreateUserWithGoogle = async () => {
        let provide = await new GoogleAuthProvider();
-       signInWithPopup(auth,provide);
+       return signInWithPopup(auth,provide);
        
     }
 
