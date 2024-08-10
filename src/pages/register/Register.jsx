@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import style from "./register.module.css"
 import {social_media_icons} from '../../assets/assets'
-import { auth } from '../../firebase/Firebase'
-import { GoogleAuthProvider} from 'firebase/auth'
-import { signInWithPopup } from 'firebase/auth'
+import { signInWithPopup } from 'firebase/auth';
+import { auth ,provider} from '../../firebase/Firebase'
 
 
 const Register = () => {
@@ -16,9 +15,11 @@ const Register = () => {
 
     //FUNCTION DEFINE HERE 
     let CreateUserWithGoogle = async () => {
-       let provide = await new GoogleAuthProvider();
-       return signInWithPopup(auth,provide);
-       
+        try {
+            await signInWithPopup(auth,provider);
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     return (

@@ -1,17 +1,21 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import {getAuth} from 'firebase/auth'
+import { getAuth,GoogleAuthProvider } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyAaEtXBBvAmqC_PYL45wOUcTo1P2or5Eeg",
-  authDomain: "first-auth-project-20a4d.firebaseapp.com",
-  projectId: "first-auth-project-20a4d",
-  storageBucket: "first-auth-project-20a4d.appspot.com",
-  messagingSenderId: "407730592479",
-  appId: "1:407730592479:web:a522d38603b348f302a76a",
-  measurementId: "G-JLWG7SGVYL"
+  apiKey: "AIzaSyDPsL-E9p7rXDop7ocBP1geaOqlO4iQJHc",
+  authDomain: "first-auth-1856c.firebaseapp.com",
+  projectId: "first-auth-1856c",
+  storageBucket: "first-auth-1856c.appspot.com",
+  messagingSenderId: "852642818793",
+  appId: "1:852642818793:web:a9f1c9cc22750e005e1e78",
+  measurementId: "G-FSPCY4QQHQ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-export let auth = getAuth(app)
+let auth = getAuth(app)
+let provider = new GoogleAuthProvider()
+
+export {auth,provider}
