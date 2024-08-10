@@ -1,0 +1,94 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formContainer{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding:40px 70px;
+    box-shadow: 18px 18px 36px #c3c3c3,
+    -18px -18px 36px #fdfdfd;
+    border-radius: 40px;
+}
+
+.formContainer div{
+    padding: 20px 0 0;
+
+}
+
+.formContainer div input {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 17px;
+  color:black;
+  padding: 5px 2px;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.formContainer div {
+    position: relative;
+}
+
+.formContainer div input::placeholder{
+     color: transparent;
+}
+
+.formContainer div input::placeholder-show ~ .formContainer div  label{
+    font-size: 17px;
+    cursor: text;
+    top: 40px;
+}
+
+.formContainer div label{
+    position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #9b9b9b;
+  pointer-events: none;
+}
+
+.formContainer div input:focus{
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+}
+
+.formContainer div input:focus ~ label{
+    position: absolute;
+    top: -10px;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+}
+
+.buttonContainer button{
+    width: 100%;
+    height:34px;
+    box-shadow: 0px 1px 2px #2B3044,
+    0px 4px 16px #2B3044;
+    border: none;
+    background-color: #2B3044;
+    color:#38caef ;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+.googleIcon{
+    cursor: pointer;
+}
