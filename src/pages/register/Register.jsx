@@ -3,10 +3,10 @@ import style from "./register.module.css"
 import {social_media_icons} from '../../assets/assets'
 import { signInWithPopup } from 'firebase/auth';
 import { auth ,provider} from '../../firebase/Firebase'
-
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
-
+    let navigate = useNavigate()
     const [name,setName] = useState("");
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -16,9 +16,14 @@ const Register = () => {
     //FUNCTION DEFINE HERE 
     let CreateUserWithGoogle = async () => {
         try {
-            await signInWithPopup(auth,provider);
+            let result = await signInWithPopup(auth,provider);
+            let user = result.user;
+            console.log(user)
+            if(user){
+                navigate('/')
+            }
         } catch (error) {
-            console.log(error)
+            console.error(error)
         }
     }
 
