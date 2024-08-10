@@ -8,11 +8,13 @@
 
 
 .formContainer{
-    width: 30%;
+    /* width: 30%; */
+    width: 250px;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding:40px 70px;
+    /* padding:40px 70px; */
+    padding: 40px 30px;
     box-shadow: 18px 18px 36px #c3c3c3,
     -18px -18px 36px #fdfdfd;
     border-radius: 40px;
@@ -91,4 +93,22 @@
 }
 .googleIcon{
     cursor: pointer;
+}
+
+@media screen and (min-width:500px) {
+    .formContainer{
+        /* width: 30%; */
+        width: 400px;
+        /* padding:40px 70px; */
+        padding: 40px 40px;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .formContainer{
+        width: 30%;
+        /* width: 400px; */
+        padding:40px 70px;
+        /* padding: 40px 40px; */
+    }
 }
