@@ -4,6 +4,7 @@ import {social_media_icons} from '../../assets/assets'
 import { signInWithPopup } from 'firebase/auth';
 import { auth ,provider} from '../../firebase/Firebase'
 import { useNavigate } from 'react-router-dom';
+import Input from '../../components/Input';
 
 const Register = () => {
     let navigate = useNavigate()
