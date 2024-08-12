@@ -15,11 +15,22 @@ const Register = () => {
 
 
     //FUNCTION DEFINE HERE 
+
+    useEffect(()=>{
+        let user = localStorage.getItem("name")
+        if(!user){
+          navigate('/register')
+        }else{
+          navigate('/')
+        }
+      },[])
+
+
     let CreateUserWithGoogle = async () => {
         try {
             let result = await signInWithPopup(auth,provider);
             let user = result.user;
-            console.log(user)
+            localStorage.setItem("name",user.displayName)
             if(user){
                 navigate('/')
             }
@@ -27,6 +38,9 @@ const Register = () => {
             console.error(error)
         }
     }
+
+
+
 
     return (
     <div className={style.container}>
